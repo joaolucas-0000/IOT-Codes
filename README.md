@@ -1,4 +1,4 @@
-![IoT Projects Repository](Downloads.iot)
+![iot](https://github.com/user-attachments/assets/0735b20c-0e8a-48d0-be90-d3249fc610fb)
 
 # IoT Projects Repository
 
