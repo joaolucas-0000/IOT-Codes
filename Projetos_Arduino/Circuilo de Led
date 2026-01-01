@@ -42,3 +42,5 @@ void ligarSomente(int led) {
 
   digitalWrite(led, HIGH);
 }
+
+
