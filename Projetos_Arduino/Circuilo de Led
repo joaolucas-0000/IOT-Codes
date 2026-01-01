@@ -1,0 +1,44 @@
+
+// Farol (Semáforo) - Tinkercad/Arduino UNO
+// Vermelho: D4 | Amarelo: D3 | Verde: D2
+
+const int LED_VERDE    = 2;
+const int LED_AMARELO  = 3;
+const int LED_VERMELHO = 4;
+
+// Tempos (em milissegundos)
+unsigned long tempoVerde   = 3000;  // 5 segundos
+unsigned long tempoAmarelo = 2000;  // 2 segundos
+unsigned long tempoVermelho= 6000;  // 5 segundos
+
+void setup() {
+  pinMode(LED_VERDE, OUTPUT);
+  pinMode(LED_AMARELO, OUTPUT);
+  pinMode(LED_VERMELHO, OUTPUT);
+
+  // Começa com o vermelho ligado (mais seguro)
+  ligarSomente(LED_VERMELHO);
+}
+
+void loop() {
+  // Verde
+  ligarSomente(LED_VERDE);
+  delay(tempoVerde);
+
+  // Amarelo
+  ligarSomente(LED_AMARELO);
+  delay(tempoAmarelo);
+
+  // Vermelho
+  ligarSomente(LED_VERMELHO);
+  delay(tempoVermelho);
+}
+
+// Função utilitária: liga só um LED e garante os outros desligados
+void ligarSomente(int led) {
+  digitalWrite(LED_VERDE,    LOW);
+  digitalWrite(LED_AMARELO,  LOW);
+  digitalWrite(LED_VERMELHO, LOW);
+
+  digitalWrite(led, HIGH);
+}
